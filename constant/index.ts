@@ -32,15 +32,16 @@ export const MAIN_WALLET_ADDRESS = process.env.NEXT_PUBLIC_MAIN_WALLET_ADDRESS |
 export const MAIN_WALLET_PRIVATE_KEY = process.env.NEXT_PUBLIC_MAIN_WALLET_PRIVATE_KEY || "" ;
 
 export const BNB_Event_Provider = new ethers.WebSocketProvider(BSC_RPC_WSS_ENDPOINT);
-// export const BASE_Provider = new ethers.WebSocketProvider(BASE_RPC_ENDPOINT);
-// console.log("🚀 ~ BASE_RPC_ENDPOINT:", BASE_RPC_ENDPOINT)
+export const BASE_EVENT_Provider = new ethers.WebSocketProvider(BASE_RPC_WSS_ENDPOINT);
 export const ETH_Event_Provider = new ethers.WebSocketProvider(ETH_RPC_WSS_ENDPOINT);
 
 export const ETH_Send_Provider = new ethers.JsonRpcProvider(ETH_RPC_ENDPOINT);
 export const BSC_Send_Provider = new ethers.JsonRpcProvider(BSC_RPC_ENDPOINT);
+export const BASE_Send_Provider = new ethers.JsonRpcProvider(BASE_RPC_ENDPOINT);
 
 export const ETH_Signer = new ethers.Wallet(MAIN_WALLET_PRIVATE_KEY, ETH_Send_Provider)
 export const BSC_Signer = new ethers.Wallet(MAIN_WALLET_PRIVATE_KEY, BSC_Send_Provider)
+export const BASE_Signer = new ethers.Wallet(MAIN_WALLET_PRIVATE_KEY, BASE_Send_Provider)
 
 export const Abi = [
   {
@@ -54,29 +55,6 @@ export const Abi = [
     ],
     "name": "Bridge",
     "type": "event"
-  },
-  {
-    "inputs": [
-			{
-				"internalType": "address",
-				"name": "tokenAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "recipient",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "sendToken",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
   }
 ];
 export const sendAbi = [
@@ -106,34 +84,10 @@ export const sendAbi = [
 ];
 
 export const BNB_Event_Contract = new ethers.Contract(BNB_BRIDGE_CONTRACT_ADDRESS, Abi, BNB_Event_Provider);
-// export const BASE_Contract = new ethers.Contract(BASE_BRIDGE_CONTRACT_ADDRESS, Abi, BASE_Provider);
+export const BASE_EVENT_Contract = new ethers.Contract(BASE_BRIDGE_CONTRACT_ADDRESS, Abi, BASE_EVENT_Provider);
 export const ETH_Event_Contract = new ethers.Contract(ETH_BRIDGE_CONTRACT_ADDRESS, Abi, ETH_Event_Provider);
 
 
 export const BNB_Send_Contract = new ethers.Contract(BNB_BRIDGE_CONTRACT_ADDRESS, sendAbi, BSC_Signer);
-// export const BASE_Contract = new ethers.Contract(BASE_BRIDGE_CONTRACT_ADDRESS, Abi, BASE_Provider);
-export const ETH_Send_Contract = new ethers.Contract(ETH_BRIDGE_CONTRACT_ADDRESS, [
-	{
-	  "inputs": [
-			  {
-				  "internalType": "address",
-				  "name": "tokenAddress",
-				  "type": "address"
-			  },
-			  {
-				  "internalType": "address",
-				  "name": "recipient",
-				  "type": "address"
-			  },
-			  {
-				  "internalType": "uint256",
-				  "name": "amount",
-				  "type": "uint256"
-			  }
-		  ],
-		  "name": "sendToken",
-		  "outputs": [],
-		  "stateMutability": "nonpayable",
-		  "type": "function"
-	}
-  ], ETH_Signer);
+export const BASE_Send_Contract = new ethers.Contract(BASE_BRIDGE_CONTRACT_ADDRESS, sendAbi, BASE_Signer);
+export const ETH_Send_Contract = new ethers.Contract(ETH_BRIDGE_CONTRACT_ADDRESS, sendAbi, ETH_Signer);

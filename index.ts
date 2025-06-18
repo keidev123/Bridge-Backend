@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import express from "express";
 import http from "http";
 import { PORT } from "./config";
+import { catchBridgeEvent } from "./src";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -18,4 +19,5 @@ const server = http.createServer(app);
 // Start the Express server to listen on the specified port
 server.listen(PORT, () => {
   console.log(`Bridge server is running on port ${PORT}`);
+  catchBridgeEvent();
 });

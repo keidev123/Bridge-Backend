@@ -2,23 +2,23 @@ import * as dotenv from 'dotenv';
 import { ethers } from "ethers";
 dotenv.config();
 
-export const BNB_tokenAddress = "0x3337289acfd41c3fdd39626736958374c71e50f9";
-export const BNB_USDCAddress = "0xdaccc914417609f08594eeedc2f5fcf1207c1240";
+export const BNB_tokenAddress = "0x4ae9656e67557e55f2f4ca719a2e2429041b1730";
+export const BNB_USDCAddress = "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d";
 
-export const ETHEREUM_tokenAddress = "0x5c29b06630Cf8Fd83924aa5b934f0DB37F9209d5";
-export const ETHEREUM_USDCAddress = "0xd9c3fb58258beb3193de98361532f84b542fc891";
+export const ETHEREUM_tokenAddress = "0xbc9c3be7bb3605aae053bcc4d514643b0525bd13";
+export const ETHEREUM_USDCAddress = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
 
-export const BASE_tokenAddress = "0x5c29b06630cf8fd83924aa5b934f0db37f9209d5";      //change
-export const BASE_USDCAddress = "0xd9c3fb58258beb3193de98361532f84b542fc891";       //change
+export const BASE_tokenAddress = "0xa5ee6bf543d032e0cb4da2057ef0b40941eae8bc";      //change
+export const BASE_USDCAddress = "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913";       //change
 
 
-export const BNB_BRIDGE_CONTRACT_ADDRESS = "0xd29574629938e8adde63a21fd6bc7f9b6ff043c4";
-export const ETH_BRIDGE_CONTRACT_ADDRESS = "0x1982ac6a7a6e5e08259d97b3250a51d6b13c6363";
-export const BASE_BRIDGE_CONTRACT_ADDRESS = "0x1982ac6a7a6e5e08259d97b3250a51d6b13c6363";       // have to change this address
+export const BNB_BRIDGE_CONTRACT_ADDRESS = "0xa5ee6bf543d032e0cb4da2057ef0b40941eae8bc";
+export const ETH_BRIDGE_CONTRACT_ADDRESS = "0xa5ee6bf543d032e0cb4da2057ef0b40941eae8bc";
+export const BASE_BRIDGE_CONTRACT_ADDRESS = "0xa357ba150811ff04bd739d92622a10185df4b3cc";       // have to change this address
 
-export const BNB_ChainId = 97;
-export const BASE_ChainId = 84532;
-export const ETH_ChainId = 11155111;
+export const BNB_ChainId = 56;
+export const BASE_ChainId = 8453;
+export const ETH_ChainId = 1;
 
 export const ETH_RPC_ENDPOINT = process.env.NEXT_PUBLIC_ETH_RPC_ENDPOINT || "" ;
 export const BSC_RPC_ENDPOINT = process.env.NEXT_PUBLIC_BSC_RPC_ENDPOINT || "";

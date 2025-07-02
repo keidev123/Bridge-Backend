@@ -24,7 +24,9 @@ This backend is designed to support a cross-chain bridge infrastructure using a 
 
 
 
-Author: Your Name
-License: MIT
-Contact: your.email@example.com
+# 👤 Author
+
+### Twitter: [@KEI_NOVAK](https://x.com/kei_4650)   
+
+### Telegram: [@KEI_NOVAK](https://t.me/Kei4650)   
 
